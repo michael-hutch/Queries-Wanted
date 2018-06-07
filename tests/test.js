@@ -1,4 +1,5 @@
 const enterFields = require('../functions/enterFields')
+const data = require('../data/data')
 var cancelPage = {}
 var enterPage = {}
 var homePage = {}
@@ -154,12 +155,12 @@ module.exports = {
             cancelPage
     },
     'Enter Wanted Require 1': browser =>{
-        homePage
-        .click('@menuBtn')
-        api.pause(1000)
-        homepage
-        .click('@enterBtn')
-        enterFields(enterObject, '')
+        enterFields(enterPage, '@enterBtn', data.req)
+        enterPage
+        .click('@submitButton')
+        .expect.element('@queryTitle').text.to.contain('Assembled Query:')
+        enterPage
+        .expect.element('@queryBody').text.to.contain('ABC-114933.abc.897654822.John Doe.M.A.611.180.Blonde.Arson.2018-06-07......')
     },
-
+   
 }
