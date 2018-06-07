@@ -1,9 +1,14 @@
 const enterFields = require('../functions/enterFields')
-var page = {}
+var cancelPage = {}
+var enterPage = {}
+var homePage = {}
+var modifyPage = {}
 module.exports = {
     beforeEach: browser => {
-        page = browser.page.pageObjects()
-        page
+        cancelPage = browser.page.cancelObject()
+        enterPage = browser.page.enterObject()
+        homePage = browser.page.modifyObject()
+        modifyPage = browser.page.modifyObject()
             .navigate()
             
     },
@@ -12,15 +17,15 @@ module.exports = {
     },
     'UI': browser => {
         //Main page
-        page
+        homePage
             .verify.containsText('@titleBar', 'Wanted Queries')
             .verify.containsText('@version', 'Version 1.2')
             .verify.elementPresent('@menuBtn')
         //Enter Wanted page
-        page
+        homePage
             .click('@menuBtn')
             .api.pause(1000)
-            page.click('@enterBtn')
+            homePage.click('@enterBtn')
             .verify.containsText('@titleBar', 'Wanted Queries')
             .verify.containsText('@version', 'Version 1.2')
             .verify.elementPresent('@menuBtn')
@@ -28,70 +33,71 @@ module.exports = {
             .verify.elementPresent('@clearButton')
             .verify.elementPresent('@hdrHeader')
             .expect.element('@hdrInput').to.have.css('box-shadow', '#6999ff')
-            page
+            enterPage
             .verify.elementPresent('@mkeHeader')
-            .expect.elementPresent('@mkeInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@mkeInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@agencyHeader')
-            .expect.elementPresent('@agencyInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@agencyInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@nameHeader')
-            .expect.elementPresent('@nameInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@nameInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@sexHeader')
-            .expect.elementPresent('@sexInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@sexInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@raceHeader')
-            .expect.elementPresent('@raceInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@raceInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@heightHeader')
-            .verify.elementPresent('@heightFeetInput').to.have.css('box-shadow', '#6999ff')
-            page
-            .expect.elementPresent('@heightInchesInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@heightFeetInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
+            .expect.element('@heightInchesInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@weightHeader')
-            .expect.elementPresent('@weightInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@weightInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@hairHeader')
-            .expect.elementPresent('@hairInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@hairInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@offenceHeader')
-            .expect.elementPresent('@offenceInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@offenceInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@dowHeader')
-            .expect.elementPresent('@dowInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@dowInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@dlHeader')
-            .expect.elementPresent('@dlInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@dlInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@dlsHeader')
-            .expect.elementPresent('@dlsInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@dlsInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@dledHeader')
-            .expect.elementPresent('@dledInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@dledInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@lpHeader')
-            .expect.elementPresent('@lpInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@lpInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@lsHeader')
-            .expect.elementPresent('@lsInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@lsInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
             .verify.elementPresent('@ledHeader')
-            .expect.elementPresent('@ledInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@ledInput').to.have.css('box-shadow', '#6999ff')
+            enterPage
         //Modify Wanted page
-        page
+        enterPage
             .click('@menuBtn')
             .api.pause(1000)
-            page.click('@modifyBtn')
+            enterPage.click('@modifyBtn')
+        modifyPage
             .verify.containsText('@titleBar', 'Wanted Queries')
             .verify.containsText('@version', 'Version 1.2')
             .verify.elementPresent('@menuBtn')
             .verify.elementPresent('@submitButton')
             .verify.elementPresent('@clearButton')
             .verify.elementPresent('@warrantIdHeader')
-            .expect.elementPresent('@warrantIdInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@warrantIdInput').to.have.css('box-shadow', '#6999ff')
+            modifyPage
             .verify.elementPresent('@hdrHeader')
             .verify.elementPresent('@hdrInput')
             .verify.elementPresent('@mkeHeader')
@@ -128,24 +134,32 @@ module.exports = {
             .verify.elementPresent('@ledHeader')
             .verify.elementPresent('@ledInput')
         //Cancel Wanted page
-        page
+        modifyPage
             .click('@menuBtn')
             .api.pause(1000)
-            page.click('@cancelBtn')
+            modifyPage.click('@cancelBtn')
             .verify.containsText('@titleBar', 'Wanted Queries')
             .verify.containsText('@version', 'Version 1.2')
             .verify.elementPresent('@menuBtn')
             .verify.elementPresent('@submitButton')
             .verify.elementPresent('@clearButton')
             .verify.elementPresent('@warrantIdHeader')
-            .expect.elementPresent('@warrantIdInput').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@warrantIdInput').to.have.css('box-shadow', '#6999ff')
+            cancelPage
             .verify.elementPresent('@reasonHeader')
-            .expect.elementPresent('@reasonInput').to.have.css('box-shadow', '#6999ff')
-            page
-            .verify.elementPresent('@cancelHeader')
-            .expect.elementPresent('@cancelDate').to.have.css('box-shadow', '#6999ff')
-            page
+            .expect.element('@reasonInput').to.have.css('box-shadow', '#6999ff')
+            cancelPage
+            .verify.elementPresent('@dateHeader')
+            .expect.element('@dateCancel').to.have.css('box-shadow', '#6999ff')
+            cancelPage
+    },
+    'Enter Wanted Require 1': browser =>{
+        homePage
+        .click('@menuBtn')
+        api.pause(1000)
+        homepage
+        .click('@enterBtn')
+        enterFields(enterObject, '')
     },
 
 }

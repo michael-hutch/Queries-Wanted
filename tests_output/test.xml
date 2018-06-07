@@ -5,9 +5,9 @@
 
   <testsuite name="test"
     errors="1" failures="0" hostname="" id="" package="test" skipped="0"
-    tests="1" time="0.005000" timestamp="Wed, 06 Jun 2018 21:47:15 GMT">
+    tests="1" time="0.03700" timestamp="Thu, 07 Jun 2018 18:10:11 GMT">
   
-    <testcase name="UI" classname="test" time="0.005000" assertions="0">
+    <testcase name="UI" classname="test" time="0.03700" assertions="0">
     </testcase>
   
 
@@ -15,8 +15,10 @@
     <system-err>
         Error while running [Test / UI]:
 
-  TypeError: Cannot read property &#39;have&#39; of undefined
-    at Object.UI (C:\Users\the9t\Documents\DevMtn\Queries-Wanted\tests\test.js:30:51)
+  Error: cancelHeader was not found in &#34;cancelObject&#34;. Available elements: titleBar,version,menuBtn,homeBtn,enterBtn,modifyBtn,cancelBtn,warrantIdInput,warrantIdHeader,reasonInput,reasonHeader,dateCancel,dateHeader,validHeader,queryTitle,queryBody
+    at getElement (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\lib\page-object\command-wrapper.js:13:13)
+    at Object.elementPresent (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\lib\page-object\command-wrapper.js:81:32)
+    at Object.UI (C:\Users\the9t\Documents\DevMtn\Queries-Wanted\tests\test.js:152:21)
     at Module.call (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\lib\runner\module.js:62:34)
     at C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\lib\runner\testcase.js:70:29
     at _fulfilled (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\node_modules\q\q.js:834:54)
@@ -24,8 +26,6 @@
     at Promise.promise.promiseDispatch (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\node_modules\q\q.js:796:13)
     at C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\node_modules\q\q.js:556:49
     at runSingle (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\node_modules\q\q.js:137:13)
-    at flush (C:\Users\the9t\AppData\Roaming\npm\node_modules\nightwatch\node_modules\q\q.js:125:13)
-    at _combinedTickCallback (internal/process/next_tick.js:131:7)
     </system-err>
   
 
