@@ -160,7 +160,7 @@ module.exports = {
         .click('@submitButton')
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         enterPage
-        .expect.element('@queryBody').text.to.contain('ABC-114933.abc.897654822.John Doe.M.A.611.180.Blonde.Arson.2018-06-07......')
+        .expect.element('@queryBody').text.to.contain('ABC-114933.ABC.897654822.John Doe.M.A.611.180.Blonde.Arson.2018-06-07......')
     },
    
 }
