@@ -34,7 +34,7 @@ module.exports = {
         {field: '@dowInput', value: '06072018'},
         {field: '@dlInput', value: 'a264756'},
         {field: '@dlsInput', value: 'CA'},
-        {field: '@dledInput', value: '06112018'},
+        {field: '@dledInput', value: '06112019'},
         {field: '@lpInput', value: '93HG123'},
         {field: '@lsInput', value: 'CA'},
         {field: '@ledInput', value: '07252020'} 
