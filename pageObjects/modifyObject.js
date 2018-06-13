@@ -50,5 +50,50 @@ module.exports = {
         validHeader: 'h4[id="validHeader"]',
         queryTitle: 'span[name="queryTitle"]',
         queryBody: 'span[name="queryBody"]',
+        errorList: '#errorList',
+        hdrLthError: {
+            selector: '//li[text()=\'The "Header" field should be between 9and 19 characters long.\']',
+            locateStrategy: 'xpath'  
+        },
+        mkeLthError: {
+            selector: '//li[text()=\'The "MKE" field should be between 2 and 4 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        agencyLthError: {
+            selector: '//li[text()=\'The "Originatiing Agency Identifier" field should be 9 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        nameLthError: {
+            selector: '//li[text()=\'The "Name" field should be between 3 and 30 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        weightLthError: {
+            selector: '//li[text()=\'The "Weight" field should be between 1 and 3 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        hairLthError: {
+            selector: '//li[text()=\'The "Hair" field should be between 3 and 10 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        offLthError: {
+            selector: '//li[text()=\'The "Offence" field should be between 5 and 15 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        dlLthError: {
+            selector: '//li[text()=\'The "Drivers License" field should be between 1 and 20 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        dlsLthError: {
+            selector: '//li[text()=\'The "DL State" field should be 2 characters long.\']',
+            locateStrategy: 'xpath'
+        },
+        lpLthError: {
+            selector: '//li[text()=\'The "License Plate" field should be between 5 and 8 chararters long.\']',
+            locateStrategy: 'xpath'
+        },
+        lpsLthError: {
+            selector: '//li[text()=\'The "License State" field should be 2 characters long.\']',
+            locateStrategy: 'xpath'
+        }
     }
 }

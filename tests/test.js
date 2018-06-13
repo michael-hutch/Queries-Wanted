@@ -231,7 +231,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278......H..........')
     },// Test modify fields with valid Race data
     'Modify Wanted Height': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@hgtFeetInput', value: '4'},{field: '@hgtInchesInput', value: '9'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '4'},{field: '@heightInchesInput', value: '9'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -241,7 +241,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278.......409.........')
     },// Test modify fields with valid Height data
     'Modify Wanted weight': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@wgtInput', value: '97'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@weightInput', value: '97'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -349,5 +349,14 @@ module.exports = {
         cancelPage
         .expect.element('@queryTitle').text.to.contain('Assembled')
     },// Test cancel page with valid data
-   
+    'Enter Wanted Invalid 1': browser =>{
+        enterFields(enterPage, '@enterBtn', data.invalid1)
+        enterPage
+        .api.pause(1000)
+        enterPage.click('@submitButton')
+        .expect.element('@queryTitle').text.to.contain('Error Received:')
+        enterPage
+        .verify.elementPresent('@errorList')
+        .expect.element('@errorList').text.to.contain('')
+    },// test required fields with invalid data in header field
 }
