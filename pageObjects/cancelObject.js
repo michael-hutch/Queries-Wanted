@@ -19,5 +19,6 @@ module.exports = {
         validHeader: 'h4[id="validHeader"]',
         queryTitle: 'span[name="queryTitle"]',
         queryBody: 'span[name="queryBody"]',
+        errorList: '#errorList',
     }
 } 
