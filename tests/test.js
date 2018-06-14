@@ -171,64 +171,64 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('ABC-114933.ABC.897654822.John Doe.M.A.611.180.Blonde.Arson.2018-06-07.a264756.CA.2019-06-11.93HG123.CA.2020-07-25')
     },// Test optional entry fields with valid data
     'Modify Wanted Header': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@hdrInput', value: 'TBS-332897'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@hdrInput', value: 'TBS-332897'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278.TBS-332987...............')
+        .expect.element('@queryBody').text.to.contain('1938663278.TBS-332897......603..........')
     },// Test modify fields with valid Header data
     'Modify Wanted MKE': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@mkeInput', value: 'TBS'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@mkeInput', value: 'TBS'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278..TBS..............')
+        .expect.element('@queryBody').text.to.contain('1938663278..TBS.....603..........')
     },// Test modify fields with valid MKE data
     'Modify Wanted Originating Agnency': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@agencyInput', value: '123456789'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@agencyInput', value: '123456789'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278...123456789.............')
+        .expect.element('@queryBody').text.to.contain('1938663278...123456789....603..........')
     },// Test modify fields with valid Originating Agency Identifier data
     'Modify Wanted Name': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@nameInput', value: 'Benedict Cumberbatch'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@nameInput', value: 'Benedict Cumberbatch'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278....Benedict Cumberbatch............')
+        .expect.element('@queryBody').text.to.contain('1938663278....Benedict Cumberbatch...603..........')
     },// Test modify fields with valid Name data
     'Modify Wanted Sex': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@sexInput', value: 'F'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@sexInput', value: 'F'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278.....F...........')
+        .expect.element('@queryBody').text.to.contain('1938663278.....F..603..........')
     },// Test modify fields with valid MKE data
     'Modify Wanted Race': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@raceInput', value: 'H'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@raceInput', value: 'H'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278......H..........')
+        .expect.element('@queryBody').text.to.contain('1938663278......H.603..........')
     },// Test modify fields with valid Race data
     'Modify Wanted Height': browser =>{
         enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '4'},{field: '@heightInchesInput', value: '9'}])
@@ -241,47 +241,47 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278.......409.........')
     },// Test modify fields with valid Height data
     'Modify Wanted weight': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@weightInput', value: '97'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@weightInput', value: '97'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278........097........')
+        .expect.element('@queryBody').text.to.contain('1938663278.......603.097.........')
     },// Test modify fields with valid Weight data
     'Modify Wanted Hair': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@hairInput', value: 'Bald'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@hairInput', value: 'Bald'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278.........Bald.......')
+        .expect.element('@queryBody').text.to.contain('1938663278.......603..Bald........')
     },// Test modify fields with valid Hair data
     'Modify Wanted Offence': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@offenceInput', value: 'Manslaught'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@offenceInput', value: 'Manslaught'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278...........Manslaught.....')
+        .expect.element('@queryBody').text.to.contain('1938663278.......603...Manslaught.......')
     },// Test modify fields with valid Offence data
     'Modify Wanted Offence Date': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@dowInput', value: '12152010'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@dowInput', value: '12152010'},{field: '@heightFeetInput', value: '6'}, {field: '@heightInchesInput', value: '03'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
         modifyPage
         .expect.element('@queryTitle').text.to.contain('Assembled Query:')
         modifyPage
-        .expect.element('@queryBody').text.to.contain('1938663278............2010-12-15....')
+        .expect.element('@queryBody').text.to.contain('1938663278.......603....2010-12-15......')
     },// Test modify fields with valid Offence Date data
     'Modify Wanted Drivers License': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@dlInput', value: 'B987654'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@dlInput', value: 'B987654'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -291,7 +291,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278.............B987654...')
     },// Test modify fields with valid Drivers License data
     'Modify Wanted Dl State': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@dlsInput', value: 'FL'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@dlsInput', value: 'FL'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -301,7 +301,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278..............FL..')
     },// Test modify fields with valid DL STate data
     'Modify Wanted DL Expiration Date': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@dledInput', value: '11252020'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@dledInput', value: '11252020'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -311,7 +311,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278...............2020-11-25.')
     },// Test modify fields with valid Dl Expiration Date data
     'Modify Wanted License Plate': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@lpInput', value: '77MS456'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@lpInput', value: '77MS456'},{field: '@heightFeetInput', value: '6'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -321,7 +321,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278................77MS456')
     },// Test modify fields with valid License Plate data
     'Modify Wanted LP State': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@lsInput', value: 'FL'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@lsInput', value: 'FL'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -331,7 +331,7 @@ module.exports = {
         .expect.element('@queryBody').text.to.contain('1938663278................FL')
     },// Test modify fields with valid LP State data
     'Modify Wanted LP Expiration Date': browser =>{
-        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@ledInput', value: '10312018'}])
+        enterFields(modifyPage, '@modifyBtn', [{field: '@warrantIdInput', value: '1938663278'},{field: '@heightFeetInput', value: '6'},{field: '@heightInchesInput', value: '03'},{field: '@ledInput', value: '10312018'}])
         modifyPage
         .click('@submitButton')
         .expect.element('@validHeader').text.to.contain('Valid')
@@ -349,14 +349,14 @@ module.exports = {
         cancelPage
         .expect.element('@queryTitle').text.to.contain('Assembled')
     },// Test cancel page with valid data
-    'Enter Wanted Invalid 1': browser =>{
-        enterFields(enterPage, '@enterBtn', data.invalid1)
-        enterPage
-        .api.pause(1000)
-        enterPage.click('@submitButton')
-        .expect.element('@queryTitle').text.to.contain('Error Received:')
-        enterPage
-        .verify.elementPresent('@errorList')
-        .expect.element('@errorList').text.to.contain('')
-    },// test required fields with invalid data in header field
+    //'Enter Wanted Invalid 1': browser =>{
+    //    enterFields(enterPage, '@enterBtn', data.invalid1)
+    //    enterPage
+    //    .api.pause(1000)
+    //    enterPage.click('@submitButton')
+    //    .expect.element('@queryTitle').text.to.contain('Error Received:')
+    //    enterPage
+    //    .verify.elementPresent('@errorList')
+    //    .expect.element('@errorList').text.to.contain('')
+    //},// test required fields with invalid data in header field
 }
